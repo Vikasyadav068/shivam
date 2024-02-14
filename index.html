@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>duck hunt game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onclick= "document.getElementById('sound1').play();">
+    <script> duck = [];
+      var hunter = document.getElementById("hunter");
+      function addDuck() {
+        duck.push(document.createElement("div"));
+        duck[ducks.length - 1].className = "duck";
+        duck[ducks.length - 1].style.left = Math.random() * window.innerWidth;
+        duck[ducks.length - 1].style.top = Math.random() * window.innerHeight;
+        document.getElementById("ducks").appendChild(ducks[ducks.length - 1]);
+    }
+    
+    function update() {
+        for (var i = 0; i < ducks.length; i++) {
+            ducks[i].style.left += 10;
+            if (duck[i].style.left > window.innerWidth) {
+                duck.splice(i, 1);
+            }
+        }
+    }
+    
+function main() {
+    setInterval(update, 100);
+    addDuck();
+}
+main();
+</script>
+
+
+    <div class="bg">
+    <audio id="sound1" src="9.mp3" preload="auto"></audio>
+
+   <input type="checkbox" id="duck1"> 
+   <label for="duck1" class="duck"><img src="hen.png"></label></label>
+
+   <input type="checkbox" id="duck2"> 
+   <label for="duck2" class="duck"><img src="hen.png"></label>
+
+   <input type="checkbox" id="duck3"> 
+   <label for="duck3" class="duck"><img src="hen.png"></label></label>
+
+   <input type="checkbox" id="duck4"> 
+   <label for="duck4" class="duck"><img src="hen.png"></label></label>
+
+   <input type="checkbox" id="duck5"> 
+   <label for="duck5" class="duck"><img src="hen.png"></label></label>
+
+   <input type="checkbox" id="duck6"> 
+   <label for="duck6" class="duck"><img src="hen.png"></label></label>
+
+   <div class="score"></div>
+</div>
+</body>
+</html>
